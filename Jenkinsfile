@@ -57,6 +57,19 @@ pipeline {
                 }
             }
         }
+
+        stage('Execute Application') {
+            steps {
+                echo 'Running Application Output:'
+                script {
+                    if (isUnix()) {
+                        sh 'java -jar target/add-two-numbers-1.0-SNAPSHOT.jar 15 25'
+                    } else {
+                        bat 'java -jar target/add-two-numbers-1.0-SNAPSHOT.jar 15 25'
+                    }
+                }
+            }
+        }
     }
 
     post {
