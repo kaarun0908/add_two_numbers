@@ -1,16 +1,9 @@
 pipeline {
     agent any
 
-    /* 
-      Uncomment the tools block if you have configured Maven and JDK in:
-      Manage Jenkins -> Tools -> Maven / JDK installations
-    */
-    /*
     tools {
-        maven 'Maven3'
-        jdk 'JDK17'
+        maven 'Maven-3.9.16'
     }
-    */
 
     stages {
         stage('Checkout') {
